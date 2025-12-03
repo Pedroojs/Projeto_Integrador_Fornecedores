@@ -1,7 +1,7 @@
 /* Layout do cabeçalho */
 .header {
   width: 100%;
-  padding: 20px 60px;
+  padding: 0 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,11 +13,12 @@
   z-index: 1000;
   box-sizing: border-box;
   height: 80px;
-  gap: 32px;
 }
 
 .header-left {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -31,9 +32,10 @@
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
-  flex: 1;
-  justify-content: center;
+  gap: 48px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .header-nav a {
