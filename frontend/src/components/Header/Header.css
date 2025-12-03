@@ -1,7 +1,7 @@
 /* Layout do cabeçalho */
 .header {
   width: 100%;
-  padding: 14px 60px;
+  padding: 20px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,7 +12,7 @@
   right: 0;
   z-index: 1000;
   box-sizing: border-box;
-  height: 60px;
+  height: 80px;
   gap: 32px;
 }
 
@@ -22,7 +22,7 @@
 
 .logo {
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   margin: 0;
 }
@@ -38,7 +38,7 @@
 
 .header-nav a {
   color: #ccc;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   transition: color 0.3s;
   white-space: nowrap;
