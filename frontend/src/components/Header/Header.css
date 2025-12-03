@@ -1,30 +1,38 @@
 /* Layout do cabeçalho */
 .header {
   width: 100%;
-  padding: 20px 60px;
+  padding: 16px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #000;
-  position: fixed; /* fixa no topo ao rolar */
+  position: fixed;
   top: 0;
-  z-index: 1000; /* sempre acima dos outros elementos */
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 /* Logo */
 .logo {
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
+  margin: 0;
 }
 
 /* Links do menu */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
 .header-nav a {
-  margin: 0 20px;
   color: #ccc;
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 /* Hover no menu */

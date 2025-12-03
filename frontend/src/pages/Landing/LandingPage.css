@@ -9,19 +9,22 @@
 .section h2 {
   color: white;
   font-size: 42px;
+  margin: 0 0 16px 0;
 }
 
 /* Subtítulo / descrição */
 .section p {
   color: #bbb;
-  margin-bottom: 40px;
+  margin: 0 0 48px 0;
+  font-size: 18px;
 }
 
-/* Grid dos cards */
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Estilo dos cards */
