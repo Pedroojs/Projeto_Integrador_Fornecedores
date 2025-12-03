@@ -1,0 +1,41 @@
+/* Seção de funcionalidades */
+.section {
+  background: #111;
+  padding: 80px 60px;
+  text-align: center;
+}
+
+/* Título da seção */
+.section h2 {
+  color: white;
+  font-size: 42px;
+}
+
+/* Subtítulo / descrição */
+.section p {
+  color: #bbb;
+  margin-bottom: 40px;
+}
+
+/* Grid dos cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+  gap: 20px;
+}
+
+/* Estilo dos cards */
+.card {
+  background: #222;
+  padding: 30px;
+  border-radius: 12px;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s; /* animação suave */
+}
+
+/* Efeito hover */
+.card:hover {
+  background: #333;
+  transform: translateY(-5px);
+}

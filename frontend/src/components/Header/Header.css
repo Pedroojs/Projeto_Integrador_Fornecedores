@@ -1,0 +1,38 @@
+/* Layout do cabeçalho */
+.header {
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  position: fixed; /* fixa no topo ao rolar */
+  top: 0;
+  z-index: 1000; /* sempre acima dos outros elementos */
+}
+
+/* Logo */
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Links do menu */
+.header-nav a {
+  margin: 0 20px;
+  color: #ccc;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Hover no menu */
+.header-nav a:hover {
+  color: white;
+}
+
+/* Área dos botões */
+.header-actions .ant-btn {
+  margin-left: 10px;
+}

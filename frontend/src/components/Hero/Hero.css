@@ -1,0 +1,34 @@
+/* Container da seção principal */
+.hero {
+  height: 90vh; /* ocupa quase a tela inteira */
+  background: #000;
+  padding: 0 60px;
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Título */
+.hero h1 {
+  color: white;
+  font-size: 62px;
+  font-weight: bold;
+  max-width: 800px;
+  line-height: 1.1;
+}
+
+/* Descrição */
+.hero p {
+  color: #bbb;
+  margin: 30px 0;
+  max-width: 550px;
+  font-size: 20px;
+}
+
+/* Botão do Ant Design */
+.hero .ant-btn {
+  width: 250px;
+  height: 48px;
+  font-size: 18px;
+}
