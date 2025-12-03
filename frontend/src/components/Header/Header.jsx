@@ -5,7 +5,6 @@ export default function Header() {
   return (
     // Cabeçalho fixo no topo da página
     <header className="header">
-      {/* Logo / nome da aplicação */}
       <div className="header-left">
         <h2 className="logo">BusinessHub</h2>
       </div>
