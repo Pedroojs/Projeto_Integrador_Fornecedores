@@ -18,7 +18,7 @@ export default function Header() {
 
       {/* Botões de login */}
       <div className="header-actions">
-        <Button type="text" href="/login">
+        <Button type="primary" href="/login">
           Entrar
         </Button>
       </div>
