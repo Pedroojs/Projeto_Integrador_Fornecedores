@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 async function startServer() {
   const server = await createServer({
-    configFile: path.resolve(__dirname, '..', 'vite.config.ts'),
+    configFile: path.resolve(__dirname, '..', 'vite.config.js'),
     server: {
       host: '0.0.0.0',
       port: 5000,
@@ -15,7 +15,7 @@ async function startServer() {
   });
   
   await server.listen();
-  console.log(`Server running on port 5000`);
+  console.log('Server running on port 5000');
 }
 
 startServer().catch(console.error);

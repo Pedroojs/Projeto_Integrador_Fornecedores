@@ -1,8 +1,8 @@
-# Inventory Control Application
+# Controle de Estoque (Stock Control System)
 
 ## Overview
 
-This is a full-stack inventory control (Controle de Estoque) web application built with React frontend and Express backend. The application provides functionality for managing products, inventory movements, and user authentication. It follows a utility-focused design with a clean, professional interface using a purple-themed color palette.
+This is a full-stack inventory management system built with React frontend and Express backend. The application allows users to manage products, track stock movements, and maintain inventory records. It's a Portuguese-language application ("Sistema de Controle de Estoque") designed for product management and stock tracking.
 
 ## User Preferences
 
@@ -12,58 +12,50 @@ Preferred communication style: Simple, everyday language.
 
 ### Frontend Architecture
 - **Framework**: React with Vite as the build tool
-- **Language**: JavaScript/JSX (TypeScript configured but JSX used in client)
-- **Styling**: Tailwind CSS with shadcn/ui component library (New York style)
-- **State Management**: TanStack React Query for server state management
-- **Routing**: Client-side routing (SPA architecture with fallback to index.html)
-- **Path Aliases**: `@/` maps to `client/src/`, `@shared/` maps to `shared/`
+- **Styling**: Tailwind CSS with a comprehensive design system using CSS custom properties for theming (supports light/dark mode)
+- **UI Components**: Radix UI primitives (dialogs, dropdowns, forms, navigation, etc.) providing accessible, unstyled components
+- **State Management**: TanStack React Query for server state management and caching
+- **Forms**: React Hook Form with Zod resolvers for validation
+- **Path Aliasing**: Uses `@/*` alias pointing to `src/*` directory
 
 ### Backend Architecture
-- **Framework**: Express.js running on Node.js
-- **Language**: TypeScript
-- **API Design**: RESTful API with `/api` prefix for all routes
-- **Server**: HTTP server with Vite dev server middleware in development
-- **Build**: esbuild bundles server code for production
+- **Runtime**: Node.js with TypeScript (tsx for development)
+- **Framework**: Express.js (inferred from project name and session handling)
+- **Database ORM**: Drizzle ORM with PostgreSQL support
+- **Schema Validation**: Drizzle-Zod for type-safe schema definitions
+- **Session Management**: connect-pg-simple for PostgreSQL-backed sessions
 
-### Data Storage
-- **ORM**: Drizzle ORM with PostgreSQL dialect
-- **Schema Location**: `shared/schema.ts` (shared between client and server)
-- **Validation**: Zod schemas generated from Drizzle schemas using drizzle-zod
-- **Development Storage**: In-memory storage class (`MemStorage`) available for development/testing
-- **Migrations**: Drizzle Kit manages database migrations in `./migrations`
+### Build System
+- **Development**: `tsx server/index.ts` runs the TypeScript server directly
+- **Production Build**: Custom build script (`script/build.ts`) outputs to `dist/`
+- **Database Migrations**: Drizzle Kit for schema pushing (`db:push`)
 
-### Design System
-- **Component Library**: shadcn/ui with Radix UI primitives
-- **Color Scheme**: Purple primary (#9b4dff), light gray background (#d3d3e0), white cards
-- **Typography**: Arial/sans-serif, specific sizing defined in design_guidelines.md
-- **Layout**: Centered containers with max-width 400px for forms
+### Authentication Pattern
+- Session-based authentication with server-side session storage
+- `useAuth` hook queries `/api/auth/user` endpoint for current user state
+- Fallback localStorage service for offline/demo functionality
 
-### Build Configuration
-- **Development**: `tsx` runs TypeScript directly, Vite handles HMR
-- **Production**: Vite builds client to `dist/public`, esbuild bundles server to `dist/index.cjs`
-- **Type Checking**: Strict TypeScript with path aliases
+### Design Patterns
+- **Component Library**: shadcn/ui-style component architecture with class-variance-authority for variant styling
+- **API Communication**: Centralized `apiRequest` utility function with consistent error handling
+- **Query Configuration**: Disabled automatic refetching and infinite stale time (manual cache invalidation expected)
 
 ## External Dependencies
 
 ### Database
-- **PostgreSQL**: Primary database (requires `DATABASE_URL` environment variable)
-- **connect-pg-simple**: Session storage in PostgreSQL
+- **PostgreSQL**: Primary database (via Drizzle ORM and connect-pg-simple)
+- **Drizzle Kit**: Database schema management and migrations
 
-### UI Components
-- **Radix UI**: Full suite of accessible primitives (dialog, dropdown, select, tabs, etc.)
-- **shadcn/ui**: Pre-built component system configured via `components.json`
-- **Embla Carousel**: Carousel component
+### UI Libraries
+- **Radix UI**: Complete suite of accessible primitives (accordion, dialog, dropdown, popover, select, tabs, toast, tooltip, etc.)
+- **Embla Carousel**: For carousel/slider components
+- **cmdk**: Command palette functionality
+- **date-fns**: Date manipulation utilities
 
-### API & Data
-- **TanStack React Query**: Server state management and caching
-- **Zod**: Runtime validation and type inference
+### Core Libraries
+- **TanStack React Query**: Async state management
+- **Zod**: Runtime type validation
+- **class-variance-authority + clsx + tailwind-merge**: CSS class management utilities
 
-### Development Tools
-- **Vite**: Frontend build tool with HMR
-- **Drizzle Kit**: Database migration tooling
-- **Replit Plugins**: Runtime error overlay, cartographer, dev banner (Replit-specific)
-
-### Utilities
-- **date-fns**: Date manipulation
-- **clsx/tailwind-merge**: Class name utilities
-- **nanoid/uuid**: ID generation
+### Fonts
+- Google Fonts: DM Sans, Fira Code, Geist Mono, Architects Daughter
