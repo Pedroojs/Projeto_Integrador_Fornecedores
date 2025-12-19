@@ -26,6 +26,7 @@ export default function Dashboard() {
     };
 
     window.addEventListener("storage", handleStorageChange);
+    window.addEventListener("storageChange", handleStorageChange);
     
     // Monitorar mudanças locais também
     const interval = setInterval(() => {
@@ -37,6 +38,7 @@ export default function Dashboard() {
 
     return () => {
       window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("storageChange", handleStorageChange);
       clearInterval(interval);
     };
   }, []);

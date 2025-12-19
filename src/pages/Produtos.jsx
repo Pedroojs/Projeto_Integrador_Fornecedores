@@ -14,6 +14,20 @@ export default function Produtos() {
   useEffect(() => {
     const storedProducts = localStorageService.getProducts();
     setProducts(storedProducts);
+
+    // Monitorar mudanças de produtos
+    const handleStorageChange = () => {
+      const updatedProducts = localStorageService.getProducts();
+      setProducts(updatedProducts);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    window.addEventListener("storageChange", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("storageChange", handleStorageChange);
+    };
   }, []);
 
   const filteredProducts = products.filter((product) =>

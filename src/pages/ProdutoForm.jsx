@@ -55,6 +55,10 @@ export default function ProdutoForm() {
       title: "Produto cadastrado!",
       description: `${nome} foi adicionado ao estoque.`,
     });
+    
+    // Disparar evento para atualizar componentes que usam produtos
+    window.dispatchEvent(new Event("storageChange"));
+    
     setLocation("/produtos");
   };
 
