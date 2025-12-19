@@ -395,4 +395,3 @@ Este projeto demonstra:
 
 ---
 
-**Desenvolvido com ❤️ | Última atualização: Dezembro de 2025**
